@@ -1,0 +1,27 @@
+{
+  "name": "Travelogue",
+  "version": "1.0.0",
+  "description": "An app to help you budget while traveling through different countries.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jplukarski/Travelogue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jplukarski/Travelogue/issues"
+  },
+  "homepage": "https://github.com/jplukarski/Travelogue#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.3.10"
+  }
+}
