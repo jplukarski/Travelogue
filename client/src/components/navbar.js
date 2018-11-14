@@ -16,7 +16,7 @@ function Navbar(props) {
 
     return (
         <div className={classes.root} >
-            <AppBar position="static" style={{ color: '#2E7D32' }}>
+            <AppBar position="static" color="default">
                 <Toolbar>
                     <Typography variant="h6" color="inherit">
                         Travelogue
