@@ -4,10 +4,17 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
+import { lightGreen } from "@material-ui/core/colors"
 
-const theme = createMuiTheme()
+const theme = createMuiTheme({
+    palette: {
+        primary: lightGreen,
+        secondary: {
+            main: "#F0F4C3",
+        },
+    },
+})
 
-console.log(theme)
 
 ReactDOM.render(
     <MuiThemeProvider theme={theme}>
