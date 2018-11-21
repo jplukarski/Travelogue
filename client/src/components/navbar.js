@@ -19,7 +19,7 @@ function Navbar(props) {
             <AppBar position="static">
                 <Toolbar>
                     <Typography color="secondary">
-                        <h3>Travelogue</h3>
+                        <h2>Travelogue</h2>
                     </Typography>
                 </Toolbar>
             </AppBar>
