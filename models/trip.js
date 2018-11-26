@@ -1,7 +1,3 @@
-module.exports = {
-    Trip: require("./trip")
-};
-
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
