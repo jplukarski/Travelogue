@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const tripSchema = new Schema({
     city: { type: String, required: true },
-    nightsStayed: { type: Number, required: true },
-    amountSpent: { type: Number, required: true },
+    nightsStayed: { type: String, required: true },
+    amountSpent: { type: String, required: true },
     currency: { type: String, required: true },
     date: { type: Date, default: Date.now }
 })
