@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
+// import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
 
 class Trips extends Component {
     state = {
@@ -40,7 +40,6 @@ class Trips extends Component {
                             <TableCell numeric>Nights Stayed</TableCell>
                             <TableCell numeric>Amount Spent</TableCell>
                             <TableCell>Currency</TableCell>
-                            <TableCell numeric>Date</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -53,8 +52,7 @@ class Trips extends Component {
                                     </TableCell>
                                     <TableCell numeric>{trip.nightsStayed}</TableCell>
                                     <TableCell numeric>{trip.amountSpent}</TableCell>
-                                    <TableCell numeric>{trip.currency}</TableCell>
-                                    <TableCell numeric>{trip.date}</TableCell>
+                                    <TableCell>{trip.currency}</TableCell>
                                 </TableRow>
                             );
                         })}
