@@ -8,6 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 // import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
+import Grid from '@material-ui/core/Grid';
+
 
 class Trips extends Component {
     state = {
@@ -32,33 +34,38 @@ class Trips extends Component {
     render() {
         return (
 
-            <Paper>
-                <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>City</TableCell>
-                            <TableCell numeric>Nights Stayed</TableCell>
-                            <TableCell numeric>Amount Spent</TableCell>
-                            <TableCell>Currency</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {this.state.trips.map(trip => {
-                            return (
-                                <TableRow key={trip._id}>
-
-                                    <TableCell component="th" scope="row">
-                                        {trip.city}
-                                    </TableCell>
-                                    <TableCell numeric>{trip.nightsStayed}</TableCell>
-                                    <TableCell numeric>{trip.amountSpent}</TableCell>
-                                    <TableCell>{trip.currency}</TableCell>
+            <Grid container>
+                <Grid item>
+                    <Paper>
+                        <Table>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>City</TableCell>
+                                    <TableCell numeric>Nights Stayed</TableCell>
+                                    <TableCell numeric>Amount Spent</TableCell>
+                                    <TableCell>Currency</TableCell>
                                 </TableRow>
-                            );
-                        })}
-                    </TableBody>
-                </Table>
-            </Paper>
+                            </TableHead>
+                            <TableBody>
+                                {this.state.trips.map(trip => {
+                                    return (
+                                        <TableRow key={trip._id}>
+
+                                            <TableCell component="th" scope="row">
+                                                {trip.city}
+                                            </TableCell>
+                                            <TableCell numeric>{trip.nightsStayed}</TableCell>
+                                            <TableCell numeric>{trip.amountSpent}</TableCell>
+                                            <TableCell>{trip.currency}</TableCell>
+                                        </TableRow>
+                                    );
+                                })}
+                            </TableBody>
+                        </Table>
+                    </Paper>
+                </Grid>
+            </Grid>
+
 
 
             // <div>
