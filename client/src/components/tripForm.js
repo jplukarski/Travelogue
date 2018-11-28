@@ -55,6 +55,10 @@ class OutlinedTextFields extends React.Component {
         });
     };
 
+    componentDidMount() {
+        console.log(currencies)
+    }
+
     render() {
         const { classes } = this.props;
 
@@ -72,15 +76,13 @@ class OutlinedTextFields extends React.Component {
                 />
 
                 <TextField
+                    onChange={this.handleChange('nightsStayed')}
                     id="outlined-number"
                     label="Nights Stayed"
+                    placeholder="5"
                     value={this.state.nightsStayed}
-                    onChange={this.handleChange('nightsStayed')}
                     type="number"
                     className={classes.textField}
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
                     margin="normal"
                     variant="outlined"
                 />
@@ -91,10 +93,8 @@ class OutlinedTextFields extends React.Component {
                     value={this.state.amountSpent}
                     onChange={this.handleChange('amountSpent')}
                     type="number"
+                    placeholder="700"
                     className={classes.textField}
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
                     margin="normal"
                     variant="outlined"
                 />
