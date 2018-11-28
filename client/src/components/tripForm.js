@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import SubmitButton from './submitButton';
+import API from "../utils/API";
+
 
 const styles = theme => ({
     container: {
@@ -1102,9 +1105,27 @@ class OutlinedTextFields extends React.Component {
         });
     };
 
-    componentDidMount() {
-        console.log(currencies)
+    loadTrips = () => {
+        API.getTrips()
+            .then(res =>
+                this.setState({ trips: res.data, city: "", nightsStayed: "", amountSpent: "", currency: "", currencySymbol: "" }))
+            .catch(err => console.log(err))
     }
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        console.log("huh?")
+        if (this.state.city && this.state.nightsStayed && this.state.currency && this.state.amountSpent) {
+            API.saveTrip({
+                city: this.state.city,
+                nightsStayed: this.state.nightsStayed,
+                currency: this.state.currency,
+                amountSpent: this.state.amountSpent
+            })
+                .then(res => this.loadTrips())
+                .catch(err => console.log("API Error: ", err));
+        }
+    };
 
     render() {
         const { classes } = this.props;
@@ -1168,6 +1189,10 @@ class OutlinedTextFields extends React.Component {
                         </MenuItem>
                     ))}
                 </TextField>
+                <SubmitButton
+                    onClick={this.handleFormSubmit}
+
+                >Submit</SubmitButton>
             </form>
         );
     }

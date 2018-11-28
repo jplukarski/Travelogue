@@ -150,7 +150,7 @@ let EnhancedTableToolbar = props => {
           </Typography>
                 ) : (
                         <Typography variant="h6" id="tableTitle">
-                            Trips
+                            Cities
           </Typography>
                     )}
             </div>
@@ -211,7 +211,7 @@ class EnhancedTable extends React.Component {
     loadTrips = () => {
         API.getTrips()
             .then(res =>
-                this.setState({ trips: res.data, city: "", nightsStayed: "", amountSpent: "", currency: "" }))
+                this.setState({ trips: res.data, city: "", nightsStayed: "", amountSpent: "", currency: "", currencySymbol: "" }))
             .catch(err => console.log(err))
     }
 

@@ -6,7 +6,7 @@ const tripSchema = new Schema({
     nightsStayed: { type: String, required: true },
     amountSpent: { type: String, required: true },
     currency: { type: String, required: true },
-    currencySymbol: { type: String, required: true },
+    currencySymbol: { type: String, required: false },
     date: { type: Date, default: Date.now }
 })
 
