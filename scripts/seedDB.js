@@ -14,6 +14,7 @@ const tripSeed = [
         nightsStayed: 4,
         amountSpent: 300,
         currency: "EUR",
+        currencySymbol: "€",
         date: new Date(Date.now())
     },
     {
@@ -21,6 +22,7 @@ const tripSeed = [
         nightsStayed: 3,
         amountSpent: 500,
         currency: "USD",
+        currencySymbol: "$",
         date: new Date(Date.now())
     },
     {
@@ -28,6 +30,7 @@ const tripSeed = [
         nightsStayed: 4,
         amountSpent: 300,
         currency: "GBP",
+        currencySymbol: "£",
         date: new Date(Date.now())
     },
 ]

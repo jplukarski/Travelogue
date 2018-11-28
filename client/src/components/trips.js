@@ -304,7 +304,7 @@ class EnhancedTable extends React.Component {
                                                 {trip.city}
                                             </TableCell>
                                             <TableCell numeric>{trip.nightsStayed}</TableCell>
-                                            <TableCell numeric>{trip.amountSpent}</TableCell>
+                                            <TableCell numeric>{trip.currencySymbol}{trip.amountSpent}</TableCell>
                                             <TableCell numeric>{trip.currency}</TableCell>
                                             <TableCell numeric>{trip.date}</TableCell>
                                         </TableRow>

@@ -46,6 +46,7 @@ class OutlinedTextFields extends React.Component {
         nightsStayed: '',
         multiline: 'Controlled',
         currency: 'EUR',
+        currencySymbol: '',
         amountSpent: ''
     };
 
@@ -117,7 +118,7 @@ class OutlinedTextFields extends React.Component {
                 >
                     {currencies.map(option => (
                         <MenuItem key={option.value} value={option.value}>
-                            {option.label}
+                            {option.label} {option.value}
                         </MenuItem>
                     ))}
                 </TextField>
