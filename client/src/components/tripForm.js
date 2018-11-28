@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
@@ -43,10 +42,11 @@ const currencies = [
 
 class OutlinedTextFields extends React.Component {
     state = {
-        name: 'Cat in the Hat',
-        age: '',
+        city: 'Cat in the Hat',
+        nightsStayed: '',
         multiline: 'Controlled',
         currency: 'EUR',
+        amountSpent: ''
     };
 
     handleChange = name => event => {
@@ -65,6 +65,7 @@ class OutlinedTextFields extends React.Component {
                     label="City"
                     placeholder="Chicago"
                     multiline
+                    onChange={this.handleChange('city')}
                     className={classes.textField}
                     margin="normal"
                     variant="outlined"
@@ -73,8 +74,8 @@ class OutlinedTextFields extends React.Component {
                 <TextField
                     id="outlined-number"
                     label="Nights Stayed"
-                    value={this.state.age}
-                    onChange={this.handleChange('age')}
+                    value={this.state.nightsStayed}
+                    onChange={this.handleChange('nightsStayed')}
                     type="number"
                     className={classes.textField}
                     InputLabelProps={{
@@ -87,8 +88,8 @@ class OutlinedTextFields extends React.Component {
                 <TextField
                     id="outlined-number"
                     label="Amount Spent"
-                    value={this.state.age}
-                    onChange={this.handleChange('age')}
+                    value={this.state.amountSpent}
+                    onChange={this.handleChange('amountSpent')}
                     type="number"
                     className={classes.textField}
                     InputLabelProps={{
