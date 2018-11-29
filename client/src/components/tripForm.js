@@ -1096,14 +1096,38 @@ class OutlinedTextFields extends React.Component {
         multiline: 'Controlled',
         currency: '',
         currencySymbol: '',
-        amountSpent: ''
+        amountSpent: '',
+        currencyInfo: ''
     };
 
     handleChange = name => event => {
-        this.setState({
-            [name]: event.target.value,
-        });
+
+        if (name === "currencyInfo") {
+            console.log(event.target.value)
+            this.setState({
+                // currency: event.target.value.code,
+                // currencySymbol: event.target.value.symbol_native
+                [name]: event.target.value,
+                currencySymbol: event.target.value.symbol_native,
+                currency: event.target.value.code
+            });
+        } else {
+            this.setState({
+                // currency: event.target.value.code,
+                // currencySymbol: event.target.value.symbol_native
+                [name]: event.target.value,
+            });
+        }
     };
+
+    handleCurrencyChange = () => event => {
+        console.log(event.target.value)
+        console.log(event.name)
+        this.setState({
+            currency: event.target.value.code,
+        })
+    }
+
 
     loadTrips = () => {
         API.getTrips()
@@ -1120,7 +1144,8 @@ class OutlinedTextFields extends React.Component {
                 city: this.state.city,
                 nightsStayed: this.state.nightsStayed,
                 currency: this.state.currency,
-                amountSpent: this.state.amountSpent
+                amountSpent: this.state.amountSpent,
+                currencySymbol: this.state.currencySymbol
             })
                 .then(res => this.loadTrips())
                 .catch(err => console.log("API Error: ", err));
@@ -1172,8 +1197,8 @@ class OutlinedTextFields extends React.Component {
                     select
                     label="Select"
                     className={classes.textField}
-                    value={this.state.currency}
-                    onChange={this.handleChange('currency')}
+                    value={this.state.currencyInfo}
+                    onChange={this.handleChange('currencyInfo')}
                     SelectProps={{
                         MenuProps: {
                             className: classes.menu,
@@ -1184,7 +1209,9 @@ class OutlinedTextFields extends React.Component {
                     variant="outlined"
                 >
                     {currencies.map(option => (
-                        <MenuItem key={option.code} value={option.code}>
+                        <MenuItem key={option.code} value={
+                            option
+                        }>
                             {option.symbol_native} {option.code} ({option.name})
                         </MenuItem>
                     ))}
