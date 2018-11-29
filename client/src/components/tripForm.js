@@ -1120,15 +1120,6 @@ class OutlinedTextFields extends React.Component {
         }
     };
 
-    handleCurrencyChange = () => event => {
-        console.log(event.target.value)
-        console.log(event.name)
-        this.setState({
-            currency: event.target.value.code,
-        })
-    }
-
-
     loadTrips = () => {
         API.getTrips()
             .then(res =>
