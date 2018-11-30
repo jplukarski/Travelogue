@@ -194,7 +194,7 @@ const styles = theme => ({
     },
 });
 
-class EnhancedTable extends React.Component {
+class Trips extends React.Component {
     state = {
         order: 'asc',
         orderBy: 'date',
@@ -338,8 +338,8 @@ class EnhancedTable extends React.Component {
     }
 }
 
-EnhancedTable.propTypes = {
+Trips.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(EnhancedTable);
+export default withStyles(styles)(Trips);

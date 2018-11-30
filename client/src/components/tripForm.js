@@ -5,7 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import SubmitButton from './submitButton';
 import API from "../utils/API";
-
+import PaperSheet from './papersheet'
 
 const styles = theme => ({
     container: {
@@ -1147,71 +1147,73 @@ class OutlinedTextFields extends React.Component {
         const { classes } = this.props;
 
         return (
-            <form className={classes.container} noValidate autoComplete="off">
-                <TextField
-                    id="outlined-textarea"
-                    label="City"
-                    placeholder="Chicago"
-                    multiline
-                    onChange={this.handleChange('city')}
-                    className={classes.textField}
-                    margin="normal"
-                    variant="outlined"
-                />
+            <PaperSheet>
+                <form className={classes.container} noValidate autoComplete="off">
+                    <TextField
+                        id="outlined-textarea"
+                        label="City"
+                        placeholder="Chicago"
+                        multiline
+                        onChange={this.handleChange('city')}
+                        className={classes.textField}
+                        margin="normal"
+                        variant="outlined"
+                    />
 
-                <TextField
-                    onChange={this.handleChange('nightsStayed')}
-                    id="outlined-number"
-                    label="Nights Stayed"
-                    placeholder="5"
-                    value={this.state.nightsStayed}
-                    type="number"
-                    className={classes.textField}
-                    margin="normal"
-                    variant="outlined"
-                />
+                    <TextField
+                        onChange={this.handleChange('nightsStayed')}
+                        id="outlined-number"
+                        label="Nights Stayed"
+                        placeholder="5"
+                        value={this.state.nightsStayed}
+                        type="number"
+                        className={classes.textField}
+                        margin="normal"
+                        variant="outlined"
+                    />
 
-                <TextField
-                    id="outlined-number"
-                    label="Amount Spent"
-                    value={this.state.amountSpent}
-                    onChange={this.handleChange('amountSpent')}
-                    type="number"
-                    placeholder="700"
-                    className={classes.textField}
-                    margin="normal"
-                    variant="outlined"
-                />
+                    <TextField
+                        id="outlined-number"
+                        label="Amount Spent"
+                        value={this.state.amountSpent}
+                        onChange={this.handleChange('amountSpent')}
+                        type="number"
+                        placeholder="700"
+                        className={classes.textField}
+                        margin="normal"
+                        variant="outlined"
+                    />
 
-                <TextField
-                    id="outlined-select-currency"
-                    select
-                    label="Select"
-                    className={classes.textField}
-                    value={this.state.currencyInfo}
-                    onChange={this.handleChange('currencyInfo')}
-                    SelectProps={{
-                        MenuProps: {
-                            className: classes.menu,
-                        },
-                    }}
-                    helperText="Please select your currency"
-                    margin="normal"
-                    variant="outlined"
-                >
-                    {currencies.map(option => (
-                        <MenuItem key={option.code} value={
-                            option
-                        }>
-                            {option.symbol_native} {option.code} ({option.name})
+                    <TextField
+                        id="outlined-select-currency"
+                        select
+                        label="Select"
+                        className={classes.textField}
+                        value={this.state.currencyInfo}
+                        onChange={this.handleChange('currencyInfo')}
+                        SelectProps={{
+                            MenuProps: {
+                                className: classes.menu,
+                            },
+                        }}
+                        helperText="Please select your currency"
+                        margin="normal"
+                        variant="outlined"
+                    >
+                        {currencies.map(option => (
+                            <MenuItem key={option.code} value={
+                                option
+                            }>
+                                {option.symbol_native} {option.code} ({option.name})
                         </MenuItem>
-                    ))}
-                </TextField>
-                <SubmitButton
-                    onClick={this.handleFormSubmit}
+                        ))}
+                    </TextField>
+                    <SubmitButton
+                        onClick={this.handleFormSubmit}
 
-                >Submit</SubmitButton>
-            </form>
+                    >Submit</SubmitButton>
+                </form>
+            </PaperSheet>
         );
     }
 }
