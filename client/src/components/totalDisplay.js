@@ -45,6 +45,7 @@ NumberFormatCustom.propTypes = {
 
 class TotalDisplay extends React.Component {
   state = {
+
     numberformat: '',
   };
 
