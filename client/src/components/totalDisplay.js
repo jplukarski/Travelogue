@@ -54,10 +54,10 @@ class TotalDisplay extends React.Component {
 
   loadTrips = () => {
     API.getTrips()
-      .then(res => console.log(res.data))
-    // this.setState({ trips: res.data, city: "", nightsStayed: "", amountSpent: "", currency: "", currencySymbol: "" }))
-    // .catch(err => console.log(err))
-
+      .then(res => console.log(res))
+      .then(res =>
+        this.setState({ numberformat: res.data[0].amountSpent }))
+      .catch(err => console.log(err))
   }
 
   render() {

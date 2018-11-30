@@ -210,8 +210,7 @@ class Trips extends React.Component {
 
     loadTrips = () => {
         API.getTrips()
-            .then(res =>
-                this.setState({ trips: res.data, city: "", nightsStayed: "", amountSpent: "", currency: "", currencySymbol: "" }))
+            .then(res => this.setState({ trips: res.data, city: "", nightsStayed: "", amountSpent: "", currency: "", currencySymbol: "" }))
             .catch(err => console.log(err))
     }
 
