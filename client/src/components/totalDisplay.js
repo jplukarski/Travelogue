@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
+import CurrencySelector from "./currencySelector"
 
 
 const styles = {
@@ -32,7 +32,7 @@ function TotalDisplay(props) {
           adjective
         </Typography>
       </CardContent>
-      <TextField />
+      <CurrencySelector />
     </Card>
   );
 }
